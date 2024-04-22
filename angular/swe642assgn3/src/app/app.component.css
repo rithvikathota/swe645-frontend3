@@ -1,0 +1,51 @@
+/* styles.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif; /* or any preferred font */
+    background: url('image.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.7); /* Adds white with transparency */
+    background-blend-mode: overlay; /* Blends the background color with the image */
+  }
+  
+  h1 {
+      text-align: center;
+      margin-top: 50px; /* Adjust the top margin as needed */
+      color: #006633; /* GMU Green */
+  }
+  
+  .container {
+      display: flex;
+      flex-direction: column; /* Stack children vertically */
+      align-items: center; /* Align children horizontally in the center */
+      justify-content: center; /* Align children vertically in the center */
+      height: 100%; /* Take full height of the viewport */
+  }
+  
+  .nav-link {
+      display: block; /* Display links as block for full width */
+      margin: 20px; /* Add some space around the links */
+      padding: 10px 20px; /* Add some padding to the links */
+      background-color: #006633; /* GMU Green */
+      color: #FFCC00; /* GMU Gold */
+      border-radius: 5px; /* Rounded corners for the links */
+      text-decoration: none; /* Remove the underline */
+      transition: background-color 0.3s; /* Smooth background color transition */
+      text-align: center; /* Center the text inside the link */
+  }
+  
+  .nav-link:hover {
+      background-color: #FFCC00; /* GMU Gold */
+      color: #006633; /* GMU Green */
+      text-decoration: underline; /* Underline text to highlight hover */
+  }
+  
+  
+  .main-content {
+    flex: 1 0 auto; /* The main content will grow to fill the space */
+  }
+
+  

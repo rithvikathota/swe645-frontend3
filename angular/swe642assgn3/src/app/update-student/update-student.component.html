@@ -1,0 +1,56 @@
+<h3>Update your Survey!</h3>
+
+<form (ngSubmit)="onSubmit()">
+    <div class="form-section">
+    <!-- Text inputs for student information -->
+    First name : <input type="text" id="firstname" [(ngModel)]="student.firstname" name="firstname" required>
+    Last name :<input type="text" id="lastname" [(ngModel)]="student.lastname" name="lastname" required>
+    Street :<input type="text" id="street" [(ngModel)]="student.street" name="street" required>
+
+    City :<input type="text" id="city" [(ngModel)]="student.city" name="city" required>
+
+    State :<input type="text" id="state" [(ngModel)]="student.state" name="state" required>
+    Zip :<input type="text" id="zip" [(ngModel)]="student.zip" name="zip" required>
+    Email :<input type="text" id="email" [(ngModel)]="student.email" name="email" required>
+    Telephone :<input type="text" id="telephone" [(ngModel)]="student.telephone" name="telephone" required>
+
+
+    Date :<input type="date" id="date" [(ngModel)]="student.date" name="date" required>
+  
+    <!-- Checkboxes for campus features liked -->
+    What did you like the most about our campus?
+    <div *ngFor="let feature of campusFeatures">
+        <input type="checkbox" 
+               [id]="feature" 
+               [checked]="student.mostliked.split(',').includes(feature)" 
+               (change)="onCheckboxChange($event, feature)">
+        <label [for]="feature">{{ feature }}</label>
+      </div>
+      
+      
+  
+    <!-- Radio buttons for interest in university -->
+    How did you become interested in our University?
+    <div *ngFor="let source of interestSources">
+      <input type="radio" [id]="source" [(ngModel)]="student.interest" [value]="source" name="interest"> 
+      <label [for]="source">{{ source }}</label>
+    </div>
+  
+    <!-- Dropdown for likelihood of recommendation -->
+    Would you recommend this school?
+    <select id="likelihood" [(ngModel)]="student.likelihood" name="likelihood" required>
+      <option value="veryLikely">Very Likely</option>
+      <option value="likely">Likely</option>
+      <option value="unlikely">Unlikely</option>
+    </select>
+  
+    <!-- Text area for additional comments -->
+    Comments :
+    <textarea id="comments" [(ngModel)]="student.comments" name="comments"></textarea>
+  
+    <!-- Submit and cancel buttons -->
+    <button type="submit">Submit</button> 
+    <button type="button">Cancel</button>
+    </div>
+  </form>
+  
